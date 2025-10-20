@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+    /* alles reseten*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+    font-size: 1.6rem;
+    background: #E65758;
+    background: linear-gradient(137deg, rgba(230, 87, 88, 1) 0%, rgba(119, 29, 50, 1) 100%);
+}
+
+html {
+    /* de html Font size op 10 pixels zetten. 1rem => 10px */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+
+}
+
+.anime__div {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+
+}
+
+.anime__card {
+    display: flex;
+    flex-direction: row;
+    max-height: 25rem;
+    width: 31.8%;
+    padding: 2rem;
+    border: solid black 1px;
+    border-radius: 1rem;
+    margin: 1rem;
+    background-color: #f5fefd;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    overflow: hidden
+}
+
+.anime__img {
+    width: 60%;
+    object-fit: contain;
+}
+
+.anime__info {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    padding: 1rem;
+    gap: 0.7rem;
+    max-height: 100%;
+
+}
+
+.anime__rating {
+    color: red;
+    border-bottom: solid black 2px;
+    width: fit-content;
+}
+
+.anime__description {
+    font-family: sans-serif;
+    object-fit: contain;
+
+}
