@@ -1,4 +1,4 @@
-function MakeAnimeCard(title, img, score, description) {
+function MakeAnimeCard(title, img, score, genre, description) {
   let cardEl = document.createElement("article");
   cardEl.className = "anime__card";
 
@@ -21,6 +21,11 @@ function MakeAnimeCard(title, img, score, description) {
   scoreEl.innerText = "Score: " + score;
   containerEl.appendChild(scoreEl);
 
+  let genreEl = document.createElement("p");
+  genreEl.className = "anime__genre";
+  genreEl.innerText = "Genre: " + genre;
+  containerEl.appendChild(genreEl);
+
   let descEl = document.createElement("p");
   descEl.className = "anime__description";
   descEl.innerText = description;
@@ -41,15 +46,21 @@ function RNG() {
 async function fetchAnime() {
   let response = await fetch(url);
   let json = await response.json();
-  console.log(json.data);
-
+  // ------------------------------------
   for (let i = 0; i < 12; i++) {
     let num = RNG();
 
+    let genreArray = [];
+
+    arr = json.data[num].genres;
+    for (const element of arr) {
+      genreArray.push(element.name + " ");
+    }
     MakeAnimeCard(
       json.data[num].title,
       json.data[num].images.webp.image_url,
       json.data[num].score,
+      genreArray,
       json.data[num].synopsis
     );
   }

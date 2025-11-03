@@ -66,6 +66,13 @@ html {
     width: fit-content;
 }
 
+.anime__genre {
+    font-family: sans-serif;
+    color: orange;
+    border-bottom: solid black 2px;
+    width: fit-content;
+}
+
 .anime__description {
     font-family: sans-serif;
     object-fit: contain;
